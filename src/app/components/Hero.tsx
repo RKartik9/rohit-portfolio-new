@@ -69,7 +69,14 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navItems = ["About", "Work", "Experience", "Contact"];
+  const scrollToSection = (href: string) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const navItems = ["About", "Work", "Contact"];
 
   return (
     <motion.nav
@@ -107,16 +114,14 @@ const Navbar = () => {
             ))}
           </div>
 
-          <div className="flex items-center space-x-4">
-            <ThemeToggle />
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="hidden md:block px-4 py-2 bg-primary text-primary-foreground rounded-full text-sm font-medium hover:bg-primary/90 transition-colors"
-            >
-              Let's Talk
-            </motion.button>
-          </div>
+          <motion.button
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => scrollToSection("#contact")}
+                className="px-4 py-2 bg-primary text-primary-foreground rounded-full text-sm font-medium hover:bg-primary/90 transition-colors"
+              >
+                Let's Talk
+              </motion.button>
         </div>
       </div>
     </motion.nav>
