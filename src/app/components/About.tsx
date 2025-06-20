@@ -90,7 +90,7 @@ const About = () => {
     {
       title: "Freelance Developer",
       company: "Various Clients",
-      description: "Full-stack development and UI/UX design consulting",
+      description: "Full-stack development",
       current: false,
     },
     {
