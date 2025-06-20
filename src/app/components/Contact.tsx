@@ -132,13 +132,13 @@ const Contact = () => {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={isInView ? { opacity: 0.1, scale: 1 } : {}}
           transition={{ duration: 2, ease: "easeOut" }}
-          className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary rounded-full blur-3xl"
+          className="absolute top-1/4 left-1/4 w-96 h-96 bg-orange-600/20 rounded-full blur-3xl"
         />
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={isInView ? { opacity: 0.05, scale: 1 } : {}}
           transition={{ duration: 2, delay: 0.5, ease: "easeOut" }}
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary rounded-full blur-3xl"
+          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-orange-700/10 rounded-full blur-3xl"
         />
       </div>
 
@@ -152,7 +152,7 @@ const Contact = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
             Let's Work Together
           </h2>
-          <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
+          <div className="w-20 h-1 bg-orange-700 mx-auto mb-6"></div>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Have a project in mind or want to discuss opportunities? 
             I'd love to hear from you. Let's create something amazing together.
@@ -213,7 +213,7 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors text-foreground placeholder-muted-foreground"
+                    className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-orange-700 focus:border-transparent transition-colors text-foreground placeholder-muted-foreground"
                     placeholder="Your Name"
                   />
                 </div>
@@ -228,7 +228,7 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors text-foreground placeholder-muted-foreground"
+                    className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-orange-700 focus:border-transparent transition-colors text-foreground placeholder-muted-foreground"
                     placeholder="Your Email"
                   />
                 </div>
@@ -245,7 +245,7 @@ const Contact = () => {
                   value={formData.subject}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors text-foreground placeholder-muted-foreground"
+                  className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-orange-700 focus:border-transparent transition-colors text-foreground placeholder-muted-foreground"
                   placeholder="Project Discussion"
                 />
               </div>
@@ -261,7 +261,7 @@ const Contact = () => {
                   onChange={handleInputChange}
                   required
                   rows={6}
-                  className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors text-foreground placeholder-muted-foreground resize-none"
+                  className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-orange-700 focus:border-transparent transition-colors text-foreground placeholder-muted-foreground resize-none"
                   placeholder="Tell me about your project..."
                 />
               </div>
@@ -271,11 +271,11 @@ const Contact = () => {
                 disabled={isSubmitting}
                 whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
                 whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
-                className="w-full px-8 py-4 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                className="w-full px-8 py-4 bg-orange-700 text-white rounded-lg font-medium hover:bg-orange-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
               >
                 {isSubmitting ? (
                   <>
-                    <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-primary-foreground" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                       <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                       <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                     </svg>
@@ -293,7 +293,7 @@ const Contact = () => {
             </form>
           </motion.div>
 
-          {/* Contact Info - Same as before */}
+          {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -321,7 +321,7 @@ const Contact = () => {
                   transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
                   className="flex items-center gap-4"
                 >
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
+                  <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center text-orange-700">
                     {info.icon}
                   </div>
                   <div>
@@ -329,7 +329,7 @@ const Contact = () => {
                     {info.link !== "#" ? (
                       <a
                         href={info.link}
-                        className="text-foreground font-medium hover:text-primary transition-colors"
+                        className="text-foreground font-medium hover:text-orange-700 transition-colors"
                       >
                         {info.content}
                       </a>
@@ -355,7 +355,7 @@ const Contact = () => {
                     transition={{ duration: 0.4, delay: 1 + index * 0.1 }}
                     whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.95 }}
-                    className="w-10 h-10 bg-secondary hover:bg-primary hover:text-primary-foreground rounded-lg flex items-center justify-center transition-colors"
+                    className="w-10 h-10 bg-secondary hover:bg-orange-700 hover:text-white rounded-lg flex items-center justify-center transition-colors"
                     aria-label={social.name}
                   >
                     {social.icon}
@@ -416,4 +416,4 @@ const Contact = () => {
   );
 };
 
-export default Contact; 
+export default Contact;

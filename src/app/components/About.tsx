@@ -109,7 +109,7 @@ const About = () => {
           initial={{ opacity: 0, x: -100 }}
           animate={isInView ? { opacity: 0.05, x: 0 } : {}}
           transition={{ duration: 2, ease: "easeOut" }}
-          className="absolute top-1/3 -left-1/4 w-96 h-96 bg-primary rounded-full blur-3xl"
+          className="absolute top-1/3 -left-1/4 w-96 h-96 bg-orange-600/20 rounded-full blur-3xl"
         />
       </div>
 
@@ -123,7 +123,7 @@ const About = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
             About Me
           </h2>
-          <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
+          <div className="w-20 h-1 bg-orange-700 mx-auto mb-6"></div>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Hey there! I'm a Software Developer at Orangewood Labs, where I
             specialize in creating seamless web applications that bridge the
@@ -150,7 +150,7 @@ const About = () => {
                 transition={{ duration: 0.6, delay: 0.4 + index * 0.2 }}
                 className="text-center p-6 rounded-lg bg-card border border-border hover:shadow-lg transition-shadow"
               >
-                <div className="text-primary mb-4 flex justify-center">
+                <div className="text-orange-700 mb-4 flex justify-center">
                   {service.icon}
                 </div>
                 <h4 className="text-xl font-semibold text-foreground mb-3">
@@ -192,7 +192,7 @@ const About = () => {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={isInView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 0.4, delay: 0.8 + index * 0.1 }}
-                className="px-4 py-2 bg-secondary hover:bg-accent text-secondary-foreground rounded-full text-sm font-medium transition-colors cursor-default"
+                className="px-4 py-2 bg-secondary hover:bg-orange-50 hover:text-orange-700 text-secondary-foreground rounded-full text-sm font-medium transition-colors cursor-default border border-transparent hover:border-orange-200"
               >
                 {skill}
               </motion.span>
@@ -228,7 +228,7 @@ const About = () => {
             {items.length > 6 && (
               <button
                 onClick={() => toggleCategory(category)}
-                className="text-xs text-primary hover:text-primary/80 transition-colors cursor-pointer underline"
+                className="text-xs text-orange-700 hover:text-orange-800 transition-colors cursor-pointer underline"
               >
                 {isExpanded ? 'Show less' : `+${items.length - 6} more`}
               </button>
@@ -264,7 +264,7 @@ const About = () => {
                     : ""
                 }`}
               >
-                <div className="absolute -left-2 top-0 w-4 h-4 bg-primary rounded-full border-4 border-background"></div>
+                <div className="absolute -left-2 top-0 w-4 h-4 bg-orange-700 rounded-full border-4 border-background"></div>
 
                 <div className="space-y-2">
                   <div className="flex items-center gap-2">
@@ -272,7 +272,7 @@ const About = () => {
                       {exp.title}
                     </h4>
                     {exp.current && (
-                      <span className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full border border-primary/20">
+                      <span className="px-2 py-1 bg-orange-100 text-orange-700 text-xs rounded-full border border-orange-200">
                         Current
                       </span>
                     )}
