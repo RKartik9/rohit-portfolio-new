@@ -138,50 +138,7 @@ const MobileMenu = ({ isOpen, navItems, scrollToSection, onClose }: {
                 ))}
               </nav>
 
-              {/* Let's Talk Button */}
-              <motion.button
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4, duration: 0.5 }}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => handleNavClick("#contact")}
-                className="mt-12 px-8 py-4 bg-orange-700 text-white rounded-full font-medium hover:bg-orange-800 transition-colors"
-              >
-                Let's Talk
-              </motion.button>
-
-              {/* Social Links */}
-              <motion.div
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5, duration: 0.5 }}
-                className="mt-auto mb-8"
-              >
-                <p className="text-muted-foreground mb-4">Follow me</p>
-                <div className="flex gap-4">
-                  {[
-                    { name: "GitHub", url: "https://github.com/rohitkartik" },
-                    { name: "LinkedIn", url: "https://linkedin.com/in/rohitkartik" },
-                    { name: "Twitter", url: "https://twitter.com/rohitkartik" }
-                  ].map((social, index) => (
-                    <motion.a
-                      key={social.name}
-                      href={social.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      initial={{ opacity: 0, scale: 0.5 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: 0.6 + 0.1 * index, duration: 0.3 }}
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="w-10 h-10 bg-secondary hover:bg-orange-100 hover:text-orange-700 rounded-lg flex items-center justify-center transition-colors text-sm"
-                    >
-                      {social.name[0]}
-                    </motion.a>
-                  ))}
-                </div>
-              </motion.div>
+              
             </div>
           </motion.div>
         </>
