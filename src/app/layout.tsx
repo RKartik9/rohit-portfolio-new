@@ -5,6 +5,11 @@ import { ThemeProvider } from "next-themes";
 export const metadata: Metadata = {
   title: "Rohit Kartik - Software Developer",
   description: "Software Developer at Orangewood Labs",
+  icons: {
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
+  },
 };
 
 export default function RootLayout({
