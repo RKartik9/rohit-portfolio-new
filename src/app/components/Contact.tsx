@@ -342,7 +342,7 @@ const Contact = () => {
             </div>
 
             <div className="pt-8 border-t border-border">
-              <p className="text-muted-foreground mb-4">Follow me on social media</p>
+              <p className="text-muted-foreground mb-4">Follow my socials</p>
               <div className="flex gap-4">
                 {socialLinks.map((social, index) => (
                   <motion.a
