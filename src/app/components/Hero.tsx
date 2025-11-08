@@ -58,7 +58,13 @@ const ThemeToggle = () => {
   );
 };
 
-const HamburgerMenu = ({ isOpen, toggle }: { isOpen: boolean; toggle: () => void }) => {
+const HamburgerMenu = ({
+  isOpen,
+  toggle,
+}: {
+  isOpen: boolean;
+  toggle: () => void;
+}) => {
   return (
     <motion.button
       whileHover={{ scale: 1.05 }}
@@ -88,7 +94,12 @@ const HamburgerMenu = ({ isOpen, toggle }: { isOpen: boolean; toggle: () => void
   );
 };
 
-const MobileMenu = ({ isOpen, navItems, scrollToSection, onClose }: {
+const MobileMenu = ({
+  isOpen,
+  navItems,
+  scrollToSection,
+  onClose,
+}: {
   isOpen: boolean;
   navItems: { name: string; href: string }[];
   scrollToSection: (href: string) => void;
@@ -112,7 +123,7 @@ const MobileMenu = ({ isOpen, navItems, scrollToSection, onClose }: {
             className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 md:hidden"
             onClick={onClose}
           />
-          
+
           {/* Menu */}
           <motion.div
             initial={{ x: "100%" }}
@@ -137,8 +148,6 @@ const MobileMenu = ({ isOpen, navItems, scrollToSection, onClose }: {
                   </motion.button>
                 ))}
               </nav>
-
-              
             </div>
           </motion.div>
         </>
@@ -162,30 +171,30 @@ const Navbar = () => {
   // Close mobile menu on escape key
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
+      if (e.key === "Escape") {
         setMobileMenuOpen(false);
       }
     };
-    document.addEventListener('keydown', handleEscape);
-    return () => document.removeEventListener('keydown', handleEscape);
+    document.addEventListener("keydown", handleEscape);
+    return () => document.removeEventListener("keydown", handleEscape);
   }, []);
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
     if (mobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     }
     return () => {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     };
   }, [mobileMenuOpen]);
 
   const navItems = [
     { name: "About", href: "#about" },
     { name: "Work", href: "#work" },
-    { name: "Contact", href: "#contact" }
+    { name: "Contact", href: "#contact" },
   ];
 
   const scrollToSection = (href: string) => {
@@ -251,9 +260,9 @@ const Navbar = () => {
             {/* Mobile Actions */}
             <div className="md:hidden flex items-center gap-2">
               <ThemeToggle />
-              <HamburgerMenu 
-                isOpen={mobileMenuOpen} 
-                toggle={() => setMobileMenuOpen(!mobileMenuOpen)} 
+              <HamburgerMenu
+                isOpen={mobileMenuOpen}
+                toggle={() => setMobileMenuOpen(!mobileMenuOpen)}
               />
             </div>
           </div>
@@ -357,7 +366,7 @@ const Hero = () => {
               whileTap={{ scale: 0.95 }}
               onClick={() =>
                 window.open(
-                  "https://drive.google.com/file/d/1BvQbuwIjRrXLkSVhBiYUEFXVVrP4a4Gl/view?usp=sharing",
+                  "https://drive.google.com/file/d/17xK4n1FXl4qcjFrKPRDf1BUQ_g4DQ63x/view?usp=sharing",
                   "_blank"
                 )
               }
