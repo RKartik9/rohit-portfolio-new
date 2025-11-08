@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
-
+import { Analytics } from "@vercel/analytics/next";
 export const metadata: Metadata = {
   title: "Rohit Kartik - Software Developer",
   description: "Software Developer at Orangewood Labs",
@@ -20,13 +20,14 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className="antialiased">
-        <ThemeProvider 
-          attribute="data-theme" 
-          defaultTheme="dark" 
+        <ThemeProvider
+          attribute="data-theme"
+          defaultTheme="dark"
           enableSystem={false}
           disableTransitionOnChange={false}
         >
           {children}
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>
