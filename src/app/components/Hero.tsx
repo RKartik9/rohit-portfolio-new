@@ -366,7 +366,7 @@ const Hero = () => {
               whileTap={{ scale: 0.95 }}
               onClick={() =>
                 window.open(
-                  "https://drive.google.com/file/d/17xK4n1FXl4qcjFrKPRDf1BUQ_g4DQ63x/view?usp=sharing",
+                  "https://drive.google.com/file/d/1yVFPxUPKyI0cNS721ADC6QKYGqqFiYsa/view?usp=sharing",
                   "_blank"
                 )
               }
