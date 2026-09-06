@@ -508,7 +508,7 @@ const Contact = () => {
             </div>
             <div className="flex items-center gap-6">
               <motion.a
-                href="https://drive.google.com/file/d/17xK4n1FXl4qcjFrKPRDf1BUQ_g4DQ63x/view?usp=sharing"
+                href="https://drive.google.com/file/d/1bhGVhJGqpuP4WZ3siOQScQiA8YJJercu/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
