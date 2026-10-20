@@ -53,9 +53,15 @@ export default function Footer() {
               <ul className="space-y-2.5">
                 {nav.map((item) => (
                   <li key={item.href}>
-                    <Link href={item.href} className="hover:text-accent">
-                      {item.label}
-                    </Link>
+                    {item.external ? (
+                      <a href={item.href} target="_blank" rel="noopener noreferrer" className="hover:text-accent">
+                        {item.label}
+                      </a>
+                    ) : (
+                      <Link href={item.href} className="hover:text-accent">
+                        {item.label}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>

@@ -4,6 +4,7 @@ import FeaturedWork from "@/components/home/FeaturedWork";
 import Disciplines from "@/components/home/Disciplines";
 import Clients from "@/components/home/Clients";
 import Services from "@/components/home/Services";
+import Writing from "@/components/home/Writing";
 import Faq from "@/components/home/Faq";
 import { site } from "@/content/site";
 
@@ -30,6 +31,7 @@ export default function Home() {
       <Disciplines />
       <Clients />
       <Services />
+      <Writing />
       <Faq />
     </>
   );

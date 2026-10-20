@@ -9,6 +9,7 @@ export const site = {
   phone: "+91 83402 41584",
   phoneHref: "tel:+918340241584",
   resume: "/Rohit_Kumar_Resume.pdf",
+  blog: "https://blog.rohitkartik.in",
   formspree: "https://formspree.io/f/xblyarka",
   description:
     "Rohit Kartik is a software engineer who designs and builds fast web products: full-stack apps, product interfaces, AI features and interactive 3D.",
@@ -19,10 +20,11 @@ export const site = {
   ],
 };
 
-export const nav = [
+export const nav: { label: string; href: string; external?: boolean }[] = [
   { label: "Home", href: "/" },
   { label: "Work", href: "/work" },
   { label: "About", href: "/about" },
+  { label: "Blog", href: site.blog, external: true },
   { label: "Contact", href: "/contact" },
 ];
 

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { nav, site } from "@/content/site";
 import { ease } from "@/components/ui/Reveal";
+import { Arrow } from "@/components/ui/Button";
 import ThemeToggle from "./ThemeToggle";
 
 export default function MenuOverlay({ open, onNavigate }: { open: boolean; onNavigate: () => void }) {
@@ -33,7 +34,16 @@ export default function MenuOverlay({ open, onNavigate }: { open: boolean; onNav
               <p className="mb-6 text-sm text-white/50">Menu</p>
               <ul>
                 {nav.map((item, i) => {
-                  const active = item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
+                  const active =
+                    !item.external && (item.href === "/" ? pathname === "/" : pathname.startsWith(item.href));
+                  const linkClass = "group inline-flex items-start gap-3 py-1";
+                  const label = (
+                    <span
+                      className={`text-h1 transition-colors duration-300 group-hover:text-accent ${active ? "text-accent" : ""}`}
+                    >
+                      {item.label}
+                    </span>
+                  );
                   return (
                     <li key={item.href} className="overflow-hidden">
                       <motion.div
@@ -41,13 +51,24 @@ export default function MenuOverlay({ open, onNavigate }: { open: boolean; onNav
                         animate={{ y: 0 }}
                         transition={{ duration: 0.9, ease, delay: 0.25 + i * 0.07 }}
                       >
-                        <Link href={item.href} onClick={onNavigate} className="group inline-flex items-start gap-3 py-1">
-                          <span
-                            className={`text-h1 transition-colors duration-300 group-hover:text-accent ${active ? "text-accent" : ""}`}
+                        {item.external ? (
+                          <a
+                            href={item.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={onNavigate}
+                            className={linkClass}
                           >
-                            {item.label}
-                          </span>
-                        </Link>
+                            {label}
+                            <span className="mt-3 text-2xl text-white/50 transition-colors duration-300 group-hover:text-accent md:mt-5 md:text-4xl">
+                              <Arrow className="-rotate-45" />
+                            </span>
+                          </a>
+                        ) : (
+                          <Link href={item.href} onClick={onNavigate} className={linkClass}>
+                            {label}
+                          </Link>
+                        )}
                       </motion.div>
                     </li>
                   );
