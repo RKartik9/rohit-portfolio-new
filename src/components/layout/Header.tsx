@@ -1,10 +1,8 @@
 "use client";
 
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { useLenis } from "lenis/react";
-import { Chevron } from "@/components/ui/Button";
 import Logo from "./Logo";
 import MenuOverlay from "./MenuOverlay";
 import ThemeToggle from "./ThemeToggle";
@@ -69,17 +67,6 @@ export default function Header() {
 
           <div className="relative z-10 flex items-center gap-2.5">
             <ThemeToggle className={open ? "hidden" : "hidden sm:grid"} />
-            {!open && (
-              <Link
-                href="/contact"
-                className="group hidden h-12 items-center gap-4 rounded-full bg-white pl-6 pr-1.5 text-sm font-medium uppercase tracking-[0.06em] text-navy shadow-[0_6px_30px_-12px_rgba(16,33,42,0.25)] md:inline-flex"
-              >
-                Start a project
-                <span className="grid size-9 place-items-center rounded-full bg-accent transition-transform duration-500 group-hover:rotate-[360deg]">
-                  <Chevron />
-                </span>
-              </Link>
-            )}
             <button
               type="button"
               onClick={() => setOpen((v) => !v)}

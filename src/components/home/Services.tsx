@@ -40,7 +40,7 @@ export default function Services() {
           </div>
           <div className="relative mt-12 flex flex-wrap gap-3">
             <Button href="/contact" variant="dark">
-              Start a project
+              Let&apos;s talk
             </Button>
             <Button href={site.phoneHref} variant="light">
               {site.phone}
